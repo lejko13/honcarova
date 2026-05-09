@@ -37,10 +37,10 @@ export default function ArtworksList() {
   }, [filterYear, filterTechnique]);
 
   return (
-    <div className=" h-[800px] md:min-h-screen bg-card flex flex-col">
+    <div className=" h-[800px] md:min-h-screen bg-pink-300 flex flex-col ">
       <Navigation />
 
-      <main className="flex-1 pt-20">
+      <main className="flex-1 pt-20 bg-card">
         <div className="px-6 md:px-12 pt-12 pb-0 max-w-6xl mx-auto">
           <FadeIn>
             <p className="font-sans text-xs tracking-[0.2em] uppercase text-muted-foreground mb-4">
@@ -54,23 +54,39 @@ export default function ArtworksList() {
           {/* Filters */}
           <FadeIn delay={0.1}>
             <div className="mb-12 space-y-4">
-              <div className="flex flex-wrap gap-2 items-center">
-                <span className="font-sans text-xs tracking-[0.15em] uppercase text-muted-foreground/60 mr-2 w-20">
+              <div className="flex flex-wrap gap-2   flex-row md:flex-col items-start justify-start">
+
+                <div className="font-sans text-xs tracking-[0.15em] uppercase text-muted-foreground/60 mr-2 w-20 ">
                   {tr("artworks.year")}
-                </span>
-                <FilterPill active={filterYear === "all"} onClick={() => setFilterYear("all")}>
+                </div>
+
+               <div className="gap-2 flex flex-wrap w-full">
+                <FilterPill
+                  active={filterYear === "all"}
+                  onClick={() => setFilterYear("all")}
+                >
                   {tr("artworks.all")}
                 </FilterPill>
+
                 {YEAR_KEYS.map((y) => (
-                  <FilterPill key={y} active={filterYear === y} onClick={() => setFilterYear(y)}>
+                  <FilterPill
+                    key={y}
+                    active={filterYear === y}
+                    onClick={() => setFilterYear(y)}
+                  >
                     {y}
                   </FilterPill>
                 ))}
+                </div>
+
               </div>
-              <div className="flex flex-wrap gap-2 items-center">
-                <span className="font-sans text-xs tracking-[0.15em] uppercase text-muted-foreground/60 mr-2 w-20">
+
+              <div className="flex flex-wrap gap-2   flex flex-col md:flex-row items-start justify-start">
+                <div className="font-sans text-xs tracking-[0.15em] uppercase text-muted-foreground/60 mr-2 w-20 ">
                   {tr("artworks.technique")}
-                </span>
+                </div>
+
+                <div className=" gap-2 flex flex-wrap w-full">
                 <FilterPill active={filterTechnique === "all"} onClick={() => setFilterTechnique("all")}>
                   {tr("artworks.all")}
                 </FilterPill>
@@ -85,6 +101,7 @@ export default function ArtworksList() {
                       : tech}
                   </FilterPill>
                 ))}
+                </div>
               </div>
             </div>
           </FadeIn>
