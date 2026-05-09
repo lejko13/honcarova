@@ -226,7 +226,7 @@ export default function ArtworkDetail() {
             {lightboxImg > 0 && (
               <button
                 onClick={(e) => { e.stopPropagation(); setLightboxImg((i) => i - 1); }}
-                className="absolute left-6 top-1/2 -translate-y-1/2 p-3 text-background/50  bg-black  rounded-full hover:text-background transition-colors"
+                className="absolute bottom-20 md:bottom-auto md:top-1/2 md:-translate-y-1/2 left-14 md:left-4 p-3 text-background/50  rounded-full hover:text-background transition-colors"
                 aria-label={tr("lightbox.prev")}
               >
                 <ChevronLeft size={32} />
@@ -235,7 +235,7 @@ export default function ArtworkDetail() {
             {lightboxImg < work.images.length - 1 && (
               <button
                 onClick={(e) => { e.stopPropagation(); setLightboxImg((i) => i + 1); }}
-                className="absolute right-6 top-1/2 -translate-y-1/2 p-3 text-background/50 bg-black  rounded-full hover:text-background transition-colors"
+                className="absolute bottom-20 md:bottom-auto md:top-1/2 md:-translate-y-1/2 right-14 md:right-4 p-3 text-background/50  rounded-full hover:text-background transition-colors"
                 aria-label={tr("lightbox.next")}
               >
                 <ChevronRight size={32} />
