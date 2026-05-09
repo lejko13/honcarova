@@ -40,7 +40,7 @@ export default function ExhibitionsSection() {
   const { lang, tr } = useLang();
 
   return (
-    <section id="exhibitions" className="py-24 md:py-40 px-6 md:px-12 bg-card">
+    <section id="exhibitions" className="py-24 md:py-40 px-6 md:px-12 bg-card border-b border-border/50">
       <div className="max-w-6xl mx-auto">
         <FadeIn>
           <p className="font-sans text-xs tracking-[0.2em] uppercase text-muted-foreground mb-4">

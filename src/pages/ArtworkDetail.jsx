@@ -6,7 +6,7 @@ import { ARTWORKS } from "@/lib/artworksData";
 import { useLang, t } from "@/lib/LanguageContext";
 import Navigation from "@/components/portfolio/Navigation";
 import Footer from "@/components/portfolio/Footer";
-
+import ContactSection from '@/components/portfolio/ContactSection'
 export default function ArtworkDetail() {
   const { id } = useParams();
   const { lang, tr } = useLang();
@@ -60,16 +60,17 @@ export default function ArtworkDetail() {
     );
   }
 
+  
   return (
-    <div className="min-h-screen bg-background flex flex-col">
+    <div className="min-h-screen bg-card flex flex-col">
       <Navigation />
 
-      <main className="flex-1 pt-20">
+      <main className="flex-1 pt-20 border-b border-border/50">
         {/* Back link */}
-        <div className="px-6 md:px-12 pt-10 pb-0">
+        <div className="px-6 md:px-12 pt-2 pb-5  md:pt-6 ">
           <Link
             to="/diela"
-            className="inline-flex items-center gap-2 font-sans text-xs tracking-[0.15em] uppercase text-muted-foreground hover:text-foreground transition-colors"
+            className="flex items-center gap-2  tracking-[0.1em] font-serif italic text-base  text-muted-foreground hover:text-foreground transition-colors"
           >
             <ArrowLeft size={14} />
             {tr("artworks.allArtworks")}
@@ -77,7 +78,7 @@ export default function ArtworkDetail() {
         </div>
 
         {/* Main layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 min-h-[80vh]">
+        <div className="grid grid-cols-1 lg:grid-cols-12 min-h-[80vh] ">
           {/* Image area */}
           <div className="lg:col-span-8 px-6 md:px-12 py-12 flex items-center justify-center bg-card">
             <motion.div
@@ -93,29 +94,31 @@ export default function ArtworkDetail() {
                 <img
                   src={work.images[0]}
                   alt={t(work.title, lang)}
-                  className="w-full max-h-[70vh] object-contain transition-transform duration-700 group-hover:scale-[1.02]"
+                  className="w-full max-h-[70vh] object-contain transition-transform duration-700 md:group-hover:scale-[1.02]"
                 />
               </button>
 
               {/* Thumbnails if multiple images */}
+
               {work.images.length > 1 && (
                 <div className="flex gap-3 mt-6 justify-center">
                   {work.images.map((img, i) => (
                     <button
                       key={i}
                       onClick={() => { setLightboxImg(i); setLightboxOpen(true); }}
-                      className="w-16 h-16 overflow-hidden border-2 border-border hover:border-foreground transition-colors"
+                      className="w-16 h-16 overflow-hidden  transition-colors"
                     >
                       <img src={img} alt="" className="w-full h-full object-cover" />
                     </button>
                   ))}
                 </div>
               )}
+
             </motion.div>
           </div>
 
           {/* Sticky info panel */}
-          <div className="lg:col-span-4 px-6 md:px-12 lg:px-10 py-12 lg:sticky lg:top-20 lg:self-start border-t lg:border-t-0 lg:border-l border-border/50">
+          <div className="lg:col-span-4 px-6 md:px-12 lg:px-10 py-12 lg:sticky lg:top-20 lg:self-start  bg-card">
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -159,11 +162,11 @@ export default function ArtworkDetail() {
               )}
 
               {/* Prev / Next navigation */}
-              <div className="mt-12 pt-8 border-t border-border/50 flex justify-between">
+              <div className="mt-12 pt-8 border-t border-border/50 flex justify-between ">
                 {prevWork ? (
                   <Link
                     to={`/dielo/${prevWork.id}`}
-                    className="flex items-center gap-2 font-sans text-xs tracking-[0.1em] text-muted-foreground hover:text-foreground transition-colors"
+                    className="flex items-center gap-2 font-sans text-xs tracking-[0.1em]  text-muted-foreground hover:text-foreground transition-colors"
                   >
                     <ChevronLeft size={14} />
                     <span className="font-serif italic text-base">{t(prevWork.title, lang)}</span>
@@ -183,7 +186,7 @@ export default function ArtworkDetail() {
           </div>
         </div>
         {/* Placeholder grid — reserved for future content */}
-        <div className="px-6 md:px-12 py-16 border-t border-border/30 max-w-7xl mx-auto w-full">
+        {/* <div className="px-6 md:px-12 py-16 border-t border-border/30 max-w-7xl mx-auto w-full">
           <p className="font-sans text-xs tracking-[0.2em] uppercase text-muted-foreground/40 mb-8">
             {tr("artworks.visualDetails")}
           </p>
@@ -195,8 +198,9 @@ export default function ArtworkDetail() {
               />
             ))}
           </div>
-        </div>
+        </div> */}
       </main>
+            <ContactSection />
 
       <Footer />
 
@@ -213,7 +217,7 @@ export default function ArtworkDetail() {
           >
             <button
               onClick={() => setLightboxOpen(false)}
-              className="absolute top-6 right-6 p-2 text-background/60 hover:text-background transition-colors"
+              className="absolute top-6 right-6 p-2 text-background/60 hover:text-backgroundtransition-colors"
               aria-label={tr("lightbox.close")}
             >
               <X size={24} />
@@ -222,7 +226,7 @@ export default function ArtworkDetail() {
             {lightboxImg > 0 && (
               <button
                 onClick={(e) => { e.stopPropagation(); setLightboxImg((i) => i - 1); }}
-                className="absolute left-6 top-1/2 -translate-y-1/2 p-3 text-background/50 hover:text-background transition-colors"
+                className="absolute left-6 top-1/2 -translate-y-1/2 p-3 text-background/50  bg-black  rounded-full hover:text-background transition-colors"
                 aria-label={tr("lightbox.prev")}
               >
                 <ChevronLeft size={32} />
@@ -231,7 +235,7 @@ export default function ArtworkDetail() {
             {lightboxImg < work.images.length - 1 && (
               <button
                 onClick={(e) => { e.stopPropagation(); setLightboxImg((i) => i + 1); }}
-                className="absolute right-6 top-1/2 -translate-y-1/2 p-3 text-background/50 hover:text-background transition-colors"
+                className="absolute right-6 top-1/2 -translate-y-1/2 p-3 text-background/50 bg-black  rounded-full hover:text-background transition-colors"
                 aria-label={tr("lightbox.next")}
               >
                 <ChevronRight size={32} />

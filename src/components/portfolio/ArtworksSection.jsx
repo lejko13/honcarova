@@ -4,7 +4,8 @@ import FadeIn from "./FadeIn";
 import { ARTWORKS } from "@/lib/artworksData";
 import { useLang, t } from "@/lib/LanguageContext";
 
-function ArtworkCard({ work, index, lang }) {
+
+function ArtworkCard({ work, index, lang ,h}) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 16 }}
@@ -13,14 +14,15 @@ function ArtworkCard({ work, index, lang }) {
       transition={{ duration: 0.55, delay: index * 0.1, ease: [0.25, 0.1, 0.25, 1] }}
     >
       <Link to={`/dielo/${work.id}`} className="group block">
-        <div className="relative overflow-hidden bg-muted aspect-square">
+        <div className="relative overflow-hidden flex justify-center items-center    aspect-square">
           <img
             src={work.images[0]}
             alt={`${t(work.title, lang)} — ${t(work.technique, lang)}, ${work.year}`}
             loading="lazy"
-            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                style={{ height: h }}
+            className="w-auto object-cover transition-transform duration-700"
           />
-          <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/5 transition-colors duration-500" />
+          <div className="absolute inset-0 bg-foreground/0 group-hover:bg-background/50 transition-colors duration-500" />
         </div>
         <div className="mt-4">
           <p className="font-serif text-xl md:text-2xl font-light italic text-foreground group-hover:text-muted-foreground transition-colors">
@@ -42,7 +44,7 @@ export default function ArtworksSection() {
   const featured = ARTWORKS.filter((a) => a.featured);
 
   return (
-    <section id="artworks" className="py-24 md:py-40 px-6 md:px-12 bg-card">
+    <section id="artworks" className="py-24 md:py-40 px-6 md:px-12 bg-card border-t border-border/50">
       <div className="max-w-6xl mx-auto">
         <FadeIn>
           <p className="font-sans text-xs tracking-[0.2em] uppercase text-muted-foreground mb-4">
@@ -54,14 +56,27 @@ export default function ArtworksSection() {
         </FadeIn>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-10">
-          {featured.map((work, i) => (
+          {featured.map((work, i) => {
+
+            console.log(work.rozmerY_VYSKAA),
+            console.log(work.rozmerX_SIRKA);
+
+
+            return(
+              
+              
             <ArtworkCard
-              key={work.id}
-              work={work}
-              index={i}
-              lang={lang}
-            />
-          ))}
+            h = {"100%"}
+                          key={work.id}
+                          work={work}
+                          index={i}
+                          lang={lang}
+                        />
+            )
+  
+
+           
+})}
         </div>
 
         <FadeIn>

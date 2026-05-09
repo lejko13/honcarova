@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useLang } from "@/lib/LanguageContext";
+import { ChevronDown } from "lucide-react";
 
 export default function HeroSection() {
   const { tr } = useLang();
@@ -26,17 +27,27 @@ export default function HeroSection() {
         </p>
       </motion.div>
 
+   <motion.div
+      initial={{ opacity: 0, y: -8 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1.2, delay: 1.5 }}
+      className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+    >
+      {/* <span className="text-xs tracking-[0.2em] uppercase text-muted-foreground/30">
+        scroll
+      </span> */}
+
       <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 1.5 }}
-        className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+        animate={{ y: [0, 6, 0], opacity: [0.4, 0.8, 0.4] }}
+        transition={{
+          duration: 3,        // 👈 pomalé
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
       >
-        <span className="font-sans text-xs tracking-[0.2em] uppercase text-muted-foreground/40">
-          scroll
-        </span>
-        <div className="w-px h-12 bg-gradient-to-b from-muted-foreground/40 to-transparent" />
+        <ChevronDown className="w-5 h-5 text-muted-foreground/30" />
       </motion.div>
+    </motion.div>
     </section>
   );
 }

@@ -4,7 +4,13 @@ import { useLang } from "@/lib/LanguageContext";
 
 export default function ContactSection() {
   const { tr } = useLang();
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
+
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
   const [sent, setSent] = useState(false);
   const [sending, setSending] = useState(false);
 
@@ -13,7 +19,6 @@ export default function ContactSection() {
     setSending(true);
 
     try {
-      // TU si môžeš napojiť vlastný backend / EmailJS / Resend
       await fetch("/api/contact", {
         method: "POST",
         headers: {
@@ -31,7 +36,10 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-24 md:py-40 px-6 md:px-12">
+    <section
+      id="contact"
+      className="py-24 md:py-40 px-6 md:px-12 bg-background"
+    >
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-16">
         
         <div className="md:col-span-4">
@@ -45,15 +53,17 @@ export default function ContactSection() {
             </h2>
 
             <div className="space-y-6">
+              
               <div>
                 <p className="font-sans text-xs tracking-[0.15em] uppercase text-muted-foreground/50 mb-1">
                   {tr("contact.emailLabel")}
                 </p>
+
                 <a
-                  href="mailto:leni@example.com"
+                  href="mailto:lehoncar@gmail.com"
                   className="font-sans text-sm text-foreground hover:text-muted-foreground transition-colors"
                 >
-                  leni@example.com
+                  lehoncar@gmail.com
                 </a>
               </div>
 
@@ -61,13 +71,27 @@ export default function ContactSection() {
                 <p className="font-sans text-xs tracking-[0.15em] uppercase text-muted-foreground/50 mb-1">
                   {tr("contact.instagramLabel")}
                 </p>
+
                 <a
-                  href="https://instagram.com"
+                  href="https://www.instagram.com/lenahoncarova_leni/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="font-sans text-sm text-foreground hover:text-muted-foreground transition-colors"
                 >
-                  @leni.honcarova
+                  @lenahoncarova_leni
+                </a>
+              </div>
+
+              <div>
+                <p className="font-sans text-xs tracking-[0.15em] uppercase text-muted-foreground/50 mb-1">
+                  Phone
+                </p>
+
+                <a
+                  href="tel:+421900000000"
+                  className="font-sans text-sm text-foreground hover:text-muted-foreground transition-colors"
+                >
+                  +421 903 283 990
                 </a>
               </div>
 
@@ -75,10 +99,12 @@ export default function ContactSection() {
                 <p className="font-sans text-xs tracking-[0.15em] uppercase text-muted-foreground/50 mb-1">
                   {tr("contact.locationLabel")}
                 </p>
+
                 <p className="font-sans text-sm text-foreground">
-                  {tr("contact.locationValue")}
+                  Slovakia
                 </p>
               </div>
+
             </div>
           </FadeIn>
         </div>
@@ -90,13 +116,14 @@ export default function ContactSection() {
                 <p className="font-serif text-3xl font-light italic text-foreground mb-3">
                   {tr("contact.thankYou")}
                 </p>
+
                 <p className="font-sans text-sm text-muted-foreground">
                   {tr("contact.successMessage")}
                 </p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
-                
+
                 <input
                   type="text"
                   placeholder={tr("contact.name")}
@@ -136,8 +163,10 @@ export default function ContactSection() {
                   className="font-sans text-xs tracking-[0.2em] uppercase text-muted-foreground hover:text-foreground transition-colors flex items-center gap-3 mt-4"
                 >
                   <span className="w-8 h-px bg-muted-foreground" />
+
                   {sending ? "..." : tr("contact.send")}
                 </button>
+
               </form>
             )}
           </FadeIn>

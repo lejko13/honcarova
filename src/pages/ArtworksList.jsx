@@ -6,6 +6,7 @@ import { useLang, t } from "@/lib/LanguageContext";
 import Navigation from "@/components/portfolio/Navigation";
 import Footer from "@/components/portfolio/Footer";
 import FadeIn from "@/components/portfolio/FadeIn";
+import ContactSection from "@/components/portfolio/ContactSection";
 
 function FilterPill({ active, onClick, children }) {
   return (
@@ -36,7 +37,7 @@ export default function ArtworksList() {
   }, [filterYear, filterTechnique]);
 
   return (
-    <div className="min-h-screen bg-background flex flex-col">
+    <div className="min-h-screen bg-card flex flex-col">
       <Navigation />
 
       <main className="flex-1 pt-20">
@@ -101,14 +102,14 @@ export default function ArtworksList() {
                   transition={{ duration: 0.4, delay: i * 0.05, ease: [0.25, 0.1, 0.25, 1] }}
                 >
                   <Link to={`/dielo/${work.id}`} className="group block">
-                    <div className="relative overflow-hidden bg-muted aspect-square">
+                    <div className="relative overflow-hidden  aspect-square flex justify-center items-center">
                       <img
                         src={work.images[0]}
                         alt={`${t(work.title, lang)} — ${t(work.technique, lang)}, ${work.year}`}
                         loading="lazy"
-                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                        className="w-auto h-[100%] object-cover transition-transform duration-700 "
                       />
-                      <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/5 transition-colors duration-500" />
+                      <div className="absolute inset-0 bg-foreground/0 group-hover:bg-background/50 transition-colors duration-500" />
                     </div>
                     <div className="mt-4">
                       <p className="font-serif text-xl font-light italic text-foreground group-hover:text-muted-foreground transition-colors">
@@ -125,7 +126,7 @@ export default function ArtworksList() {
           </div>
         </div>
       </main>
-
+        <ContactSection />
       <Footer />
     </div>
   );

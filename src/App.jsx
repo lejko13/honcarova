@@ -41,7 +41,7 @@ function App() {
     <LanguageProvider>
       <QueryClientProvider client={queryClientInstance}>
         <Router>
-          <ScrollToTop /> {/* 👈 toto je dôležité */}
+          <ScrollToTop /> 
 
           <AuthenticatedApp />
         </Router>

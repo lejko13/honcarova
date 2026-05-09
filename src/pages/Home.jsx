@@ -17,6 +17,7 @@ export default function Home() {
         <ExhibitionsSection />
         <ContactSection />
       </main>
+      
       <Footer />
     </div>
   );

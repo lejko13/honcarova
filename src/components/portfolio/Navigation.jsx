@@ -56,11 +56,11 @@ export default function Navigation() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 0.5 }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          scrolled
-            ? "bg-background/90 backdrop-blur-md border-b border-border/50"
-            : "bg-transparent"
-        }`}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 
+ 
+   bg-background border-b border-border/50
+           
+        `}
       >
         <nav className="max-w-7xl mx-auto px-6 md:px-12 h-16 md:h-20 flex items-center justify-between">
           <a
@@ -68,7 +68,7 @@ export default function Navigation() {
             onClick={(e) => { e.preventDefault(); handleNavClick("#hero"); }}
             className="font-serif text-xl md:text-2xl tracking-wide text-foreground hover:opacity-60 transition-opacity duration-300"
           >
-            Leni
+            Leni Hončárová
           </a>
 
           <div className="hidden md:flex items-center gap-10">
