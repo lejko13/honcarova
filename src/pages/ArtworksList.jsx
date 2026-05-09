@@ -37,7 +37,7 @@ export default function ArtworksList() {
   }, [filterYear, filterTechnique]);
 
   return (
-    <div className="min-h-screen bg-card flex flex-col">
+    <div className=" h-[800px] md:min-h-screen bg-card flex flex-col">
       <Navigation />
 
       <main className="flex-1 pt-20">

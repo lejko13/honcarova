@@ -62,7 +62,7 @@ export default function ArtworkDetail() {
 
   
   return (
-    <div className="min-h-screen bg-card flex flex-col">
+    <div className="h-[800px] md:min-h-screen bg-card flex flex-col">
       <Navigation />
 
       <main className="flex-1 pt-20 border-b border-border/50">
