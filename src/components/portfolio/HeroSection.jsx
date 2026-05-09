@@ -8,7 +8,7 @@ export default function HeroSection() {
   return (
     <section
       id="hero"
-      className="min-h-screen flex flex-col items-center justify-center px-6 md:px-12 relative overflow-hidden"
+      className="md:min-h-screen h-[800px] flex flex-col items-center justify-center px-6 md:px-12 relative overflow-hidden"
     >
       <motion.div
         initial={{ opacity: 0, y: 32 }}
