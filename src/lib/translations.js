@@ -7,17 +7,20 @@ export const translations = {
       contact: "Kontakt",
     },
     hero: {
-      quote: '„Maľovanie je tichá poézia a poézia je maľovanie, ktoré hovorí."',
+      quote: '„Obraz je mlčiaca báseň a báseň je hovoriaci obraz.“',
       quoteAuthor: "— Plutarchos",
     },
     profile: {
       label: "Profil",
-      bio1: "Mgr. Lena Hončárová (umelecký pseudonym: Leni) od roku 2017 pôsobí ako učiteľka na Škole úžitkového umenia v Kežmarku a v súčasnosti žije a tvorí v Poprade.",
-      bio2: 'V roku 2023 vydala debut básnickej zbierky „Na otočku do raja" ilustrovanej vlastnou fotografiou.',
-      body1: "Vizuálna tvorba Leni Hončárovej prirodzene prepája slovo a obraz. Odrazy umelkinho subjektívneho vnútorného sveta sa objavujú v čistej abstraktnej maľbe, často obohatené asambláží, frotážou a fragmentmi textu. Jej diela sa stávajú vizuálnymi partitúrami – experimentálnymi plochami skúmajúcimi štruktúru, materialitu a žiarivú farbu.",
-      body2: 'Jej abstraktné maľby vznikajú zo systematického hľadania krehkého osobného výrazu inšpirovaného emóciami, poéziou, životnými skúsenosťami a súčasným vizuálnym experimentom. Diela pripomínajú „tiché vizuálne básne", v ktorých abstraktný výraz posilňuje jazyk.',
+      bio1: "Mgr. Lena Hončárová, (um. pseudonym Leni), pôsobí od roku 2017 ako pedagogička na Škole umeleckého priemyslu v Kežmarku, žije a tvorí v Poprade.",
+
+      bio2: 'V roku 2023 vydala debut básnickej zbierky Na otočku do raja, ilustrovaný autorkinými fotografiami, dostupný v kníhkupectvách.',
+
+      body1: "Výtvarnú tvorbu Leni Hončárovej neoddeliteľne prelína slovo i obraz: reflexie autorkinho subjektívneho sveta v čistej abstraktnej maľbe sú mnohokrát doplnené asamblážami, frotážami, či krátkymi textami. Stávajú sa obrazovými partitúrami, platformami pre formálny technický experiment, hľadaním unikátnej svetelnosti farieb. Špecifickou autorskou technikou vytvára asociačné záznamy a iluzívne výjavy s expresívnou povahou.Abstraktné diela sú výsledkom systematického procesu hľadania krehkej subjektívnej výpovede: vychádzajú z aktuálnych pocitov a životných výziev, z poézie a inšpirácií vo výtvarnom umení, sú podvedomým záznamom reality do abstraktnej skratky. Podnety v súčasnej maľbe jej otvorili dvere k novým vyjadrovacím prostriedkom, pokusom,či procesuálnym experimentom. Autorku zaujímajú premenlivé štruktúry hmoty, vlastnosti a svetelnosť farieb. Aj keď diela pripomínajú proces gestickej maľby, konštruovanie obrazov je založené na vopred premyslenom budovaní a prestupovaní tvarov, stávajú sa výsledkom konkrétneho vizuálneho, literárneho, či osobného zážitku.Vznikajú tak „mlčiace vizuálne básne“, ktorých spoločným menovateľom je abstraktívna expresia posilnená slovom.",
+
+      
       curatorName: "Mgr. Lucia Benická",
-      curatorRole: "Art Historička / 2022",
+      curatorRole: "Historička umenia / 2022",
       imageAlt: "Portrét Leni",
     },
     artworks: {
@@ -79,15 +82,16 @@ export const translations = {
       contact: "Contact",
     },
     hero: {
-      quote: '"Painting is silent poetry and poetry is painting that speaks."',
+      quote: '"A picture is a silent poem and a poem is a speaking picture."',
       quoteAuthor: "— Plutarch",
     },
     profile: {
       label: "Profile",
       bio1: "Mgr. Lena Hončárová (artist pseudonym: Leni) has worked since 2017 as a teacher at the School of Applied Arts in Kežmarok and currently lives and creates in Poprad, Slovakia.",
+      
       bio2: 'In 2023 she published her debut poetry collection "Na otočku do raja", illustrated with her own photography.',
-      body1: "Leni Hončárová's visual work naturally intertwines word and image. Reflections of the artist's subjective inner world appear in pure abstract painting, often enriched by assemblage, frottage, and fragments of text. Her works become visual scores, experimental platforms exploring structure, materiality and luminous color.",
-      body2: 'Her abstract paintings emerge from a systematic search for fragile personal expression inspired by emotions, poetry, life experiences and contemporary visual experimentation. The artworks resemble "silent visual poems" where abstract expression is strengthened through language.',
+      body1: "Leni Hončárová's artwork is inextricably intertwined with words and images: reflections of the author's subjective world in pure abstract painting are often supplemented with assemblages, frottages, or short texts. They become pictorial scores, platforms for formal technical experimentation, the search for unique luminosity of colors. Using a specific author's technique, he creates associative records and illusory scenes with an expressive nature. Abstract works are the result of a systematic process of searching for a fragile subjective statement: they are based on current feelings and life challenges, from poetry and inspirations in the visual arts, they are a subconscious record of reality in an abstract shorthand. Stimuli in contemporary painting opened the door for her to new means of expression, attempts, or procedural experiments. The author is interested in variable structures of matter, properties and luminosity of colors. Although the works resemble the process of gestural painting, the construction of images is based on a premeditated construction and transposition of shapes, they become the result of a specific visual, literary, or personal experience. Thus, silent visual poems are created, the common denominator of which is an abstract expression reinforced with words.",
+     
       curatorName: "Mgr. Lucia Benická",
       curatorRole: "Art Historian / 2022",
       imageAlt: "Portrait of Leni",

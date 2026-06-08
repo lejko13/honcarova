@@ -78,7 +78,7 @@ export default function ArtworkDetail() {
         </div>
 
         {/* Main layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 min-h-[80vh] ">
+        <div className="grid grid-cols-1 lg:grid-cols-12 min-h-[80vh] bg-white ">
           {/* Image area */}
           <div className="lg:col-span-8 px-6 md:px-12 py-12 flex items-center justify-center bg-card">
             <motion.div
@@ -118,7 +118,7 @@ export default function ArtworkDetail() {
           </div>
 
           {/* Sticky info panel */}
-          <div className="lg:col-span-4 px-6 md:px-12 lg:px-10 py-12 lg:sticky lg:top-20 lg:self-start  bg-card">
+          <div className="lg:col-span-4 px-6 md:px-12 lg:px-10 py-12  lg:top-20 lg:self-start  bg-card">
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
